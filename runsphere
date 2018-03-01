@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+from sphere import sphere
+import argparse
+
+if __name__ == "__main__":
+    optparser = argparse.ArgumentParser(description='Sphere properties computation')
+    optparser.add_argument('radius', type=float, nargs='?', default=None, help='Sphere radius')
+    optparser.add_argument('-v', action='store_true', help='get volume')
+    optparser.add_argument('-s', action='store_true', help='get surface')
+    optparser.add_argument('-d', action='store_true', help='get diameter')
+    opts = optparser.parse_args()
+    if opts.radius == None:
+        optparser.error("you must supply a radius")
+
+    my_sphere = sphere.Sphere(opts.radius)
+    print "%s" % my_sphere
+    print "  radius is %s" % my_sphere.radius
+    if opts.v:
+        print "  volume is %s" % my_sphere.volume()
+    if opts.s:
+        print "  surface is %s" % my_sphere.surface()
+    if opts.d:
+        print "  diameter is %s" % my_sphere.diameter()
