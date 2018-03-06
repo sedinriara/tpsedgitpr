@@ -13,11 +13,11 @@ if __name__ == "__main__":
         optparser.error("you must supply a radius")
 
     my_sphere = sphere.Sphere(opts.radius)
-    print "%s" % my_sphere
-    print "  radius is %s" % my_sphere.radius
+    print("%s" % my_sphere)
+    print("  radius is %s" % my_sphere.radius)
     if opts.v:
-        print "  volume is %s" % my_sphere.volume()
+        print("  volume is %s" % my_sphere.volume())
     if opts.s:
-        print "  surface is %s" % my_sphere.surface()
+        print("  surface is %s" % my_sphere.surface())
     if opts.d:
-        print "  diameter is %s" % my_sphere.diameter()
+        print("  diameter is %s" % my_sphere.diameter())
